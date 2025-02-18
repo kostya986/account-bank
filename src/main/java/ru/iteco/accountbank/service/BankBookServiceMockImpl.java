@@ -12,4 +12,5 @@ public class BankBookServiceMockImpl implements BankBookService {
     public List<BankBook> getBankBooksByAccountId(Integer accountId) {
         return List.of(new BankBook());
     }
+
 }

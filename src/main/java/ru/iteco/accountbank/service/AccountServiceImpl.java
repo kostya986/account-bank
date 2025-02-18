@@ -19,7 +19,7 @@ public class AccountServiceImpl implements AccountService {
     private final Map<String, BankBookService> bankBookServices;
 
     @Autowired
-    public AccountServiceImpl(@Qualifier("personalInformationMockServiceImpl")
+    public AccountServiceImpl(@Qualifier("personalInformationServiceImpl")
                               PersonalInformationService personalInformationService,
                               Map<String, BankBookService> bankBookServices) {
         this.personalInformationService = personalInformationService;
