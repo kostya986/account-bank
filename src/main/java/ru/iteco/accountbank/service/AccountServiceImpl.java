@@ -2,6 +2,7 @@ package ru.iteco.accountbank.service;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Qualifier;
+import org.springframework.context.annotation.Lazy;
 import org.springframework.context.annotation.Primary;
 import org.springframework.stereotype.Service;
 import ru.iteco.accountbank.model.AccountInfo;
@@ -19,7 +20,7 @@ public class AccountServiceImpl implements AccountService {
     private final Map<String, BankBookService> bankBookServices;
 
     @Autowired
-    public AccountServiceImpl(@Qualifier("personalInformationServiceImpl")
+    public AccountServiceImpl(@Lazy @Qualifier("personalInformationServiceImpl")
                               PersonalInformationService personalInformationService,
                               Map<String, BankBookService> bankBookServices) {
         this.personalInformationService = personalInformationService;
@@ -41,6 +42,11 @@ public class AccountServiceImpl implements AccountService {
             }
         }
         return accountInfo;
+    }
+
+    @Override
+    public String getPersonalInfo() {
+        return personalInformationService.getClass().toString();
     }
 
 }

@@ -6,4 +6,6 @@ public interface AccountService {
 
     AccountInfo getAccountInfoById(Integer accountId);
 
+    String getPersonalInfo();
+
 }

@@ -2,10 +2,12 @@ package ru.iteco.accountbank.service;
 
 import jakarta.annotation.PostConstruct;
 import org.springframework.beans.factory.annotation.Value;
+import org.springframework.context.annotation.Lazy;
 import org.springframework.stereotype.Service;
 import ru.iteco.accountbank.model.PersonalInfo;
 
 @Service
+@Lazy
 public class PersonalInformationServiceImpl implements PersonalInformationService {
 
     @Value("${name}")
